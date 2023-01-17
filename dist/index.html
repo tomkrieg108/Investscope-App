@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:400,500,600&display=swap"
+      rel="stylesheet"
+    />
+    <!-- font awesome - 2022 kit version -->
+    <script
+      src="https://kit.fontawesome.com/912f539c83.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../dist/css/main.css" />
+    <!-- <script defer src="js/transactions.js"></script> -->
+    <!-- <script defer src="js/main.js" type="module"></script> -->
+    <script defer src="js/controller.js" type="module"></script>
+    <title>Portfolio Website</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="container">
+        <nav class="nav">
+          <img src="" alt="LOGO" class="nav__logo" />
+          <ul class="nav__links">
+            <li class="nav__item"><a href="#">Portfolio</a></li>
+            <li class="nav__item"><a href="index.html">Transactions</a></li>
+            <li class="nav__item"><a href="stocks.html">Stock Info</a></li>
+            <li class="btn nav__btn"><a href="#">Log Out</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="main-content">
+      <div class="container">
+        <div class="transbar">
+          <div class="transbar__filter">
+            <h4 class="transbar__heading">Filter By:</h4>
+            <form class="form form--filter">
+              <input
+                type="date"
+                placeholder="Start Date"
+                class="form__input form__input--filter start-date"
+              />
+              <input
+                type="date"
+                placeholder="End Date"
+                class="form__input form__input--filter end-date"
+              />
+              <input
+                type="text"
+                placeholder="Stock code"
+                class="form__input form__input--filter stock-code"
+                id="stock-code-id"
+              />
+              <button id="btn-filter" class="btn">Apply</button>
+              <!-- <input
+                type="text"
+                placeholder="Type (b/s)"
+                class="form__input form__input--filter"
+              /> -->
+            </form>
+          </div>
+
+          <div class="transbar__actions">
+            <button class="btn transbar__new-btn">New</button>
+            <button class="btn transbar__import-btn">Import</button>
+          </div>
+        </div>
+        <!-- -------------------------------------- -->
+
+        <div class="trans-summary">
+          <div class="label">Tot Transactions</div>
+          <div class="value">751</div>
+          <div class="label">Tot Buys</div>
+          <div class="value">532</div>
+          <div class="label">Tot Sells</div>
+          <div class="value">239</div>
+
+          <div class="label">Tot Buy Amt</div>
+          <div class="value">$567,123</div>
+          <div class="label">Tot Sell Amt</div>
+          <div class="value">$123,456</div>
+          <div class="label">Profit/Loss</div>
+          <div class="value">$280,000</div>
+
+          <div class="label">Ave Buy Amt</div>
+          <div class="value">$4,123</div>
+          <div class="label">Ave Sell Amt</div>
+          <div class="value">$8,543</div>
+          <div class="label">Ave Holding Time</div>
+          <div class="value">834 days</div>
+        </div>
+
+        <!-- ----------------------- -->
+
+        <div class="action-bar">
+          <div class="pagination">
+            <div class="btn-page btn-left">
+              <i class="fa-solid fa-chevron-left"></i>
+            </div>
+            <div class="btn-page btn-page-ref active" data-page="1">1</div>
+            <div class="btn-page btn-page-ref">2</div>
+            <div class="btn-page btn-page-ref">3</div>
+            <span>...</span>
+            <div class="btn-page btn-page-ref">7</div>
+            <div class="btn-page btn-right">
+              <i class="fa-solid fa-chevron-right"></i>
+            </div>
+          </div>
+          <div class="buttons">buttons</div>
+        </div>
+
+        <!-- -------------------------- -->
+
+        <div class="ntable">
+          <div class="ntable-heading">
+            <div class="ntable-heading-el">#</div>
+            <div class="ntable-heading-el">date</div>
+            <div class="ntable-heading-el">code</div>
+            <div class="ntable-heading-el">type</div>
+            <div class="ntable-heading-el">shares</div>
+            <div class="ntable-heading-el">price</div>
+            <!-- <div class="ntable-heading-el"></div> -->
+          </div>
+          <div class="ntable-row">
+            <div class="ntable-row-data" data-id="33">
+              <div class="ntable-row-data-el">751</div>
+              <div class="ntable-row-data-el">12-Sep-22</div>
+              <div class="ntable-row-data-el">ABB</div>
+              <div class="ntable-row-data-el">Buy</div>
+              <div class="ntable-row-data-el">200</div>
+              <div class="ntable-row-data-el">$2.54</div>
+            </div>
+            <div class="ntable-row-detail">
+              <p class="description">
+                Buy 200 shares in Aussie Broadband (communication services) at
+                $2.54 on 23-Jun-22
+              </p>
+              <div class="buttons">
+                <button class="btn modal-update-btn">Update</button>
+                <button class="btn modal-delete-btn">Delete</button>
+              </div>
+              <div class="label">Consideration</div>
+              <div class="value">$4,634.27</div>
+              <div class="label">Brokerage</div>
+              <div class="value">$10.00</div>
+              <div class="label">Num Shares</div>
+              <div class="value">200</div>
+              <div class="label">New Share Count</div>
+              <div class="value">3200</div>
+              <div class="label">Prev Share Count</div>
+              <div class="value">3000</div>
+              <div class="label">Prev Ave Buy Price</div>
+              <div class="value">$2.65</div>
+              <div class="label">New Ave Buy Price</div>
+              <div class="value">$2.57</div>
+              <div class="label">Buy Count</div>
+              <div class="value">5</div>
+              <div class="label">Sell Count</div>
+              <div class="value">3</div>
+              <div class="label">P/L</div>
+              <div class="value">$1,243</div>
+              <div class="fifosales">
+                <p>Sell 100 purchased 14-Sep-20 at $2.15. P/L=$$953</p>
+                <p>Sell 100 purchased 18-Aug-21 at $2.45. P/L=$$75</p>
+              </div>
+              <div class="comment">
+                <p>
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Itaque illum natus, ipsum minima officiis eius enim.
+                  Repudiandae, perspiciatis. Iste nostrum placeat aliquid
+                  voluptates! Rerum quas, voluptas labore harum ea natus.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="portfolio">
+          <div class="portfolio-heading">
+            <div class="portfolio-heading-el">#</div>
+            <div class="portfolio-heading-el">Code</div>
+            <div class="portfolio-heading-el">Shares</div>
+            <div class="portfolio-heading-el">Ave price</div>
+            <div class="portfolio-heading-el">Cost Base</div>
+          </div>
+          <div class="portfolio-data">
+            <div class="portfolio-data-el">751</div>
+            <div class="portfolio-data-el">12-Sep-22</div>
+            <div class="portfolio-data-el">ABB</div>
+            <div class="portfolio-data-el">Buy</div>
+            <div class="portfolio-data-el">200</div>
+            <div class="portfolio-data-el">$2.54</div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <div class="modal create-update-modal hidden">
+      <button class="btn__close-modal">&times;</button>
+      <h3 class="modal__title">New Transaction</h3>
+      <form class="modal__form">
+        <label>Date</label>
+        <input type="date" class="form__input form__input--date" />
+        <label>Stock Code</label>
+        <select class="form__input form__input--code">
+          <option value="BHP">BHP</option>
+          <option value="ANN">ANN</option>
+        </select>
+        <label>Type</label>
+        <select class="form__input form__input--type">
+          <option value="Buy">Buy</option>
+          <option value="Sell">Sell</option>
+        </select>
+        <label>Amount</label>
+        <input type="number" class="form__input form__input--amount" />
+        <label>Price</label>
+        <input type="number" class="form__input form__input--price" />
+        <label>Brokerage</label>
+        <input type="number" class="form__input form__input--brokerage" />
+      </form>
+      <div class="modal__buttons">
+        <button class="btn modal__btn">Create New &rarr;</button>
+      </div>
+    </div>
+    <div class="overlay hidden"></div>
+  </body>
+</html>
